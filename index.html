@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"  />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="js/svg-inject.js"></script>
+    <title>MK11 | Mortal Kombat</title>
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+  <header>
+    <section class="header">
+        <ul class="navbar p-2">
+            <li class="navbar__item cursor-pointer"><img src="assets/img/logo_MK.svg" alt="Logo MK11" onload="SVGInject(this)"/></li>
+            <li class="navbar__item  cursor-pointer navbar--of-or-on"><img src="assets/img/icon_menu_MK.svg" alt="Menu icon MK11" onload="SVGInject(this)"></li>
+        </ul>
+    </section>
+  </header>
+
+  <!-- Video Background Desktop -->
+  <div class="container__left__background-video">
+    <video autoplay muted loop id="video">
+      <source src="video/melhor jogo.mp4"  type="video/mp4" >  
+    </video>
+  </div>
+  <!-- Corpo da página -->
+  <main>
+    <section class="container p-3">
+      <article class="container__left">
+
+        <img src="assets/img/Title_MK.svg" alt="Logo Principal MK11" class=" container__left__item__img" onload="SVGInject(this)" />
+        
+        <p class="container__left__item__text text-center mb-3">
+          Assim como nos jogos anteriores da série, <span>MK11</span> é um jogo eletrônico de 
+          combate em que dois jogadores lutam um contra o outro.
+        </p>
+
+        <button class="container__left__item__btn cursor-pointer">
+          Buy Now
+        </button>
+      </article>
+      <aside class="container__right__background"></aside>
+      <article class="container__right">
+            <div class="container__right__character">
+              <img src="assets/img/character_MK.svg" alt="Scorpion MK11" onload="SVGInject(this)" />
+            </div>
+      </article>
+      <footer>
+        <aside class="footer">
+          <ul>
+            <li><i class="fab fa-xbox"></i></li>
+            <li><i class="fab fa-playstation"></i></li>
+            <li><i class="fab fa-steam"></i></li>
+          </ul>
+        </aside>
+      </footer>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+</body>
+</html>

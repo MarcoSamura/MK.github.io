@@ -1,0 +1,183 @@
+// Bom, nesse trecho usei Mixins tanto para fazer ajustes mobile quanto na versão
+// desktop, ou seja tudo fora dessas mixins se torna o estilo global desses elementos,
+// caso queira modificar algo basta ir na mixin desejada.
+
+main {
+    position: relative;
+}
+
+.container__right__background {
+    @include desktop () {
+        min-height: 100vh;
+        width: 40vw;
+        background: $orange-dark;
+        position: absolute;
+        top:0;
+        transform: translateY(-100px);
+        right: 0;
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left:0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../../assets/img/background_MK.svg);
+        background-position: bottom left;
+        background-size: cover;
+
+        @include responsive () { display: none; }
+        
+    }
+}
+.container {
+    color: $white; // Elemento Global
+    @include desktop () { // Mixin da versão Desktop
+       display: grid;
+       width: 100%;
+       grid-template-columns: 1fr 1fr; // Elemento da Mixin
+       grid-template-rows: 1fr 1fr;
+       align-items: center;
+       box-sizing: border-box;
+       
+       justify-content: center;
+
+       & .container__left__item__img {
+           margin-bottom: $gap-2;
+          
+       }
+
+        & .container__right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            & > div{
+                position: absolute;
+                margin-left: 0;
+            }  
+
+
+            & .container__right__character {
+                transform: translateX(-40px);
+
+                @include desktop () {
+                    width: 90vw;
+                    height: 100vh;
+                    z-index: -1;
+                }
+            }
+        }
+
+   }
+
+   .container__left {
+       @include responsive () {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+
+
+           & .container__left__item__img {
+               margin-bottom: $gap-2;
+           }
+       }
+   }
+
+    
+    & .container__left__item__text {
+        font-size: 1.1rem;
+        letter-spacing: 1.05px;
+    }
+    & .container__left__item__btn {
+        border: none;
+        padding: 20px 84px;
+        margin: 0 auto;
+        color: $white;  
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:$orange-light;
+        box-shadow: 10px 15px 51px $dark;
+        transition: .8s all;
+
+        transform: skew(-10deg, 0deg);
+
+        &:focus {
+            transition: .8s all;
+            box-shadow:  0 0 100px $orange-light;
+            outline: 0;
+        }
+
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: '\f054';
+            border-radius: 50px;
+            width: 60px;
+            height: 100%;
+            right: 0;
+            bottom: .5px;
+            position: absolute;
+            border-radius: 0px;
+            
+        }
+
+        &:hover::before {
+            animation: setAfter .5s ease-out infinite alternate;
+        }
+    }   
+    
+        & .container__right {
+
+            @include responsive () {
+                display: none;
+            }
+        }
+
+}
+
+@include responsive () { // Mixin da versão Mobile  
+    body { // elemento da mixin
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('https://i.pinimg.com/originals/63/e3/c2/63e3c24134f3f26db50cc46bf55daefa.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: right;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: .8;
+            background: $dark;
+        }
+    }
+
+}

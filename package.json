@@ -1,0 +1,14 @@
+{
+  "name": "mk11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MarcoSamura/MK11.git",
+  "author": "MarcoSamura",
+  "license": "MIT",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  }
+}

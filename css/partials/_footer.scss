@@ -1,0 +1,13 @@
+
+footer {
+    position: absolute;
+    top: 50%;
+    left: $gap-2;
+    
+    .footer ul {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: $gap-1;
+        line-height: 2;
+    }
+}
