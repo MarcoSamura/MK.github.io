@@ -1,29 +1,37 @@
 body {
-    position: relative;
 
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        background:$dark;
-        z-index: -1;
-        opacity: .7;
+    @include desktop () {
+        position: relative;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background:$dark;
+            z-index: -1;
+            opacity: .7;
+        }
     }
 }
 .container__left__background-video {
-    position: absolute;
-    
-    & video {
-        z-index: -3;
-        object-fit: cover;
-        width: 110vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
+    @include responsive() {
+        display: none;
+    }
+    @include desktop() {
+        position: absolute;
+        
+        & video {
+            z-index: -3;
+            object-fit: cover;
+            width: 110vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
     }
 
 }
